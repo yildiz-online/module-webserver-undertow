@@ -23,6 +23,7 @@
  */
 package be.yildizgames.module.webserver.undertow;
 
+import be.yildizgames.module.webserver.HtmlPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;

@@ -21,11 +21,9 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
+package be.yildizgames.module.webserver;
 
-package be.yildizgames.module.webserver.undertow;
+public interface WebServerConfiguration {
 
-public interface HtmlPage {
-
-    String render();
-
+    int getWebServerPort();
 }
