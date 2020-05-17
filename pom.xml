@@ -34,11 +34,28 @@
       <groupId>io.undertow</groupId>
       <artifactId>undertow-core</artifactId>
       <version>${undertow.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.wildfly.common</groupId>
+          <artifactId>wildfly-common</artifactId>
+        </exclusion>
+      </exclusions>  
     </dependency>
     <dependency>
       <groupId>io.undertow</groupId>
       <artifactId>undertow-servlet</artifactId>
       <version>${undertow.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.wildfly.common</groupId>
+          <artifactId>wildfly-common</artifactId>
+        </exclusion>
+      </exclusions> 
+    </dependency>
+    <dependency>
+      <groupId>org.wildfly.common</groupId>
+      <artifactId>wildfly-common</artifactId>
+      <version>1.5.4.Final</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
