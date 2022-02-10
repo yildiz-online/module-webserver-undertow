@@ -25,7 +25,7 @@
   <version>1.1.15-SNAPSHOT</version>
 
   <properties>
-    <undertow.version>2.2.12.Final</undertow.version>
+    <undertow.version>2.2.16.Final</undertow.version>
   </properties>
 
   <dependencies>
