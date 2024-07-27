@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ /*
-  ~  * Copyright (C) Grégory Van den Borre - All Rights Reserved
-  ~  * Unauthorized copying of this file, via any medium is strictly prohibited
-  ~  * Proprietary and confidential
-  ~  * Written by Grégory Van den Borre <vandenborre.gregory@hotmail.fr> 2019-2020
-  ~  */
+  ~ This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
+  ~  Copyright (c) 2020-2024 Grégory Van den Borre
+  ~  More infos available: https://engine.yildiz-games.be
+  ~  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+  ~  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+  ~  the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+  ~  permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright
+  ~  notice and this permission notice shall be included in all copies or substantial portions of the  Software.
+  ~  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+  ~  WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+  ~  OR COPYRIGHT  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+  ~  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  ~
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -22,10 +29,11 @@
   <name>Yildiz-Engine Module Web server Undertow</name>
 
   <artifactId>module-webserver-undertow</artifactId>
-  <version>1.1.17-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
 
   <properties>
     <undertow.version>2.3.15.Final</undertow.version>
+    <jackson.version>2.17.2</jackson.version>
   </properties>
 
   <dependencies>
@@ -78,7 +86,27 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.17.2</version>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-yaml</artifactId>
+      <version>${jackson.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>2.2</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>

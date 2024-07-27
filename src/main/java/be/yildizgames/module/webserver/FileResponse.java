@@ -1,6 +1,6 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
- *  Copyright (c) 2020-2024 Grégory Van den Borre
+ *  Copyright (c) 2024 Grégory Van den Borre
  *  More infos available: https://engine.yildiz-games.be
  *  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  *  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -15,15 +15,20 @@
  */
 package be.yildizgames.module.webserver;
 
+import java.nio.file.Path;
+
 /**
- * This represent the web server.
+ * Behavior to provide a file as response.
  *
  * @author Grégory Van den Borre
  */
-public interface WebServer {
+public interface FileResponse {
 
     /**
-     * Start the web server.
+     * Implementation to generate the file response.
+     *
+     * @param data Data exchanged between the server and the client, never null.
+     * @return The file to send as response.
      */
-    void start();
+    Path fileResponse(ExchangeData data);
 }

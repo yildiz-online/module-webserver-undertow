@@ -1,6 +1,6 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
- *  Copyright (c) 2020-2024 Grégory Van den Borre
+ *  Copyright (c) 2024 Grégory Van den Borre
  *  More infos available: https://engine.yildiz-games.be
  *  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  *  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -16,14 +16,16 @@
 package be.yildizgames.module.webserver;
 
 /**
- * This represent the web server.
+ * This object contains the data exchanged between the web server and the request handler.
  *
  * @author Grégory Van den Borre
  */
-public interface WebServer {
+public interface ExchangeData {
 
     /**
-     * Start the web server.
+     * Provide the request path.
+     *
+     * @return the request path, never null.
      */
-    void start();
+    String getRequestPath();
 }

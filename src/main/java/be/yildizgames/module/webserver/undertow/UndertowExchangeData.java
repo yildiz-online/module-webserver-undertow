@@ -1,6 +1,6 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
- *  Copyright (c) 2020-2024 Grégory Van den Borre
+ *  Copyright (c) 2024 Grégory Van den Borre
  *  More infos available: https://engine.yildiz-games.be
  *  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  *  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -13,17 +13,24 @@
  *  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-package be.yildizgames.module.webserver;
+package be.yildizgames.module.webserver.undertow;
+
+import be.yildizgames.module.webserver.ExchangeData;
+import io.undertow.server.HttpServerExchange;
 
 /**
- * This represent the web server.
- *
  * @author Grégory Van den Borre
  */
-public interface WebServer {
+class UndertowExchangeData implements ExchangeData {
 
-    /**
-     * Start the web server.
-     */
-    void start();
+    private final HttpServerExchange exchange;
+
+    UndertowExchangeData(HttpServerExchange httpServerExchange) {
+        this.exchange = httpServerExchange;
+    }
+
+    @Override
+    public String getRequestPath() {
+        return this.exchange.getRequestPath();
+    }
 }

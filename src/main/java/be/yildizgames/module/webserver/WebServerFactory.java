@@ -1,6 +1,6 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
- *  Copyright (c) 2020-2024 Grégory Van den Borre
+ *  Copyright (c) 2024 Grégory Van den Borre
  *  More infos available: https://engine.yildiz-games.be
  *  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  *  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -15,15 +15,22 @@
  */
 package be.yildizgames.module.webserver;
 
+import be.yildizgames.module.webserver.undertow.UndertowWebServerBuilder;
+
 /**
- * This represent the web server.
+ * Factory to create a web server builder.
  *
  * @author Grégory Van den Borre
  */
-public interface WebServer {
+public class WebServerFactory {
 
     /**
-     * Start the web server.
+     * Create a new web server builder.
+     *
+     * @param configuration Configuration to use.
+     * @return The web server builder, never null.
      */
-    void start();
+    public static WebServerBuilder create(WebServerConfiguration configuration) {
+        return new UndertowWebServerBuilder(configuration);
+    }
 }
