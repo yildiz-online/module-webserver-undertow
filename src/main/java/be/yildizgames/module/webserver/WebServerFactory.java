@@ -25,6 +25,13 @@ import be.yildizgames.module.webserver.undertow.UndertowWebServerBuilder;
 public class WebServerFactory {
 
     /**
+     * Private constructor to prevent instantiation.
+     */
+    private WebServerFactory() {
+        super();
+    }
+
+    /**
      * Create a new web server builder.
      *
      * @param configuration Configuration to use.
