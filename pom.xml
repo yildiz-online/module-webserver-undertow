@@ -33,7 +33,7 @@
 
   <properties>
     <undertow.version>2.3.18.Final</undertow.version>
-    <jackson.version>2.18.3</jackson.version>
+    <jackson.version>2.19.0</jackson.version>
   </properties>
 
   <dependencies>
