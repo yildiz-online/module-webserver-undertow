@@ -32,7 +32,7 @@
   <version>2.0.17-SNAPSHOT</version>
 
   <properties>
-    <undertow.version>2.3.20.Final</undertow.version>
+    <undertow.version>2.3.22.Final</undertow.version>
     <jackson.version>2.20.1</jackson.version>
   </properties>
 
