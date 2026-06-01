@@ -55,6 +55,10 @@
       <version>${undertow.servlet.version}</version>
       <exclusions>
         <exclusion>
+          <groupId>io.undertow</groupId>
+          <artifactId>undertow-core</artifactId>
+        </exclusion>
+        <exclusion>
           <groupId>org.jboss.logging</groupId>
           <artifactId>jboss-logging</artifactId>
         </exclusion>
