@@ -32,7 +32,7 @@
   <version>2.0.28-SNAPSHOT</version>
 
   <properties>
-    <undertow.version>2.4.2.Final</undertow.version>
+    <undertow.version>2.4.3.Final</undertow.version>
     <undertow.servlet.version>2.3.26.Final</undertow.servlet.version>
     <jackson.version>2.22.2</jackson.version>
   </properties>
