@@ -34,7 +34,6 @@
   <properties>
     <undertow.version>2.4.4.Final</undertow.version>
     <undertow.servlet.version>2.3.27.Final</undertow.servlet.version>
-    <jackson.version>2.22.4</jackson.version>
   </properties>
 
   <dependencies>
@@ -70,29 +69,9 @@
       <version>3.6.3.Final</version>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-yaml</artifactId>
-      <version>${jackson.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.yaml</groupId>
-          <artifactId>snakeyaml</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.fasterxml.jackson.core</groupId>
-          <artifactId>jackson-databind</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.yaml</groupId>
-      <artifactId>snakeyaml</artifactId>
-      <version>2.7</version>
+      <groupId>be.yildiz-games</groupId>
+      <artifactId>module-serialization</artifactId>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>

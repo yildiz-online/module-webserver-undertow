@@ -5,9 +5,7 @@
 open module be.yildizgames.module.webserver.undertow {
 
     requires undertow.core;
-    requires com.fasterxml.jackson.databind;
-    requires com.fasterxml.jackson.dataformat.yaml;
-    requires jdk.unsupported;
+    requires be.yildizgames.module.serialization;
 
     exports be.yildizgames.module.webserver;
 }

@@ -15,8 +15,7 @@
  */
 package be.yildizgames.module.webserver.undertow;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import be.yildizgames.module.serialization.SerializerBuilder;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
 
@@ -76,9 +75,9 @@ class UndertowExchange {
 
     void respondJson(HttpServerExchange e, Object o) {
         try {
-            var content = new ObjectMapper().writeValueAsString(o);
+            var content = SerializerBuilder.provideJson().writeObject(o);
             sendText(content, "application/json", e);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             System.getLogger(UndertowExchange.class.getName()).log(System.Logger.Level.ERROR, "", ex);
             this.respondErrorInternal(e, "An error has occurred.");
         }
@@ -86,9 +85,9 @@ class UndertowExchange {
 
     void respondYaml(HttpServerExchange e, Object o) {
         try {
-            var content = new ObjectMapper(new YAMLFactory()).writeValueAsString(o);
+            var content = SerializerBuilder.provideYaml().writeObject(o);
             sendText(content, "application/yaml", e);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             System.getLogger(UndertowExchange.class.getName()).log(System.Logger.Level.ERROR, "", ex);
             this.respondErrorInternal(e, "An error has occurred.");
         }
